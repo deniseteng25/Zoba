@@ -1,5 +1,5 @@
 //
-//  ZBViewController.h
+//  ZBJoinedTVC.h
 //  Zoba
 //
 //  Created by Chantil on 2013/12/22.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZBViewController : UIViewController
+@interface ZBJoinedTVC : UITableViewController
 
 @end

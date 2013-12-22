@@ -14,13 +14,20 @@
 		18F0BAE218670B7400002D4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BAE118670B7400002D4D /* main.m */; };
 		18F0BAE618670B7400002D4D /* ZBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BAE518670B7400002D4D /* ZBAppDelegate.m */; };
 		18F0BAE918670B7400002D4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F0BAE718670B7400002D4D /* Main.storyboard */; };
-		18F0BAEC18670B7400002D4D /* ZBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BAEB18670B7400002D4D /* ZBViewController.m */; };
 		18F0BAEE18670B7400002D4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F0BAED18670B7400002D4D /* Images.xcassets */; };
 		18F0BAF518670B7400002D4D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F0BAF418670B7400002D4D /* XCTest.framework */; };
 		18F0BAF618670B7400002D4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F0BAD518670B7400002D4D /* Foundation.framework */; };
 		18F0BAF718670B7400002D4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F0BAD918670B7400002D4D /* UIKit.framework */; };
 		18F0BAFF18670B7400002D4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18F0BAFD18670B7400002D4D /* InfoPlist.strings */; };
 		18F0BB0118670B7400002D4D /* ZobaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BB0018670B7400002D4D /* ZobaTests.m */; };
+		18F0BB0C186716D100002D4D /* ZBSignInVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BB0B186716D100002D4D /* ZBSignInVC.m */; };
+		18F0BB0F186716EF00002D4D /* ZBSignUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BB0E186716EF00002D4D /* ZBSignUpVC.m */; };
+		18F0BB121867170A00002D4D /* ZBCreateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BB111867170A00002D4D /* ZBCreateVC.m */; };
+		18F0BB211867175B00002D4D /* ZBSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BB201867175B00002D4D /* ZBSettingVC.m */; };
+		18F0BB241867184500002D4D /* ZBJoinedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BB231867184500002D4D /* ZBJoinedTVC.m */; };
+		18F0BB271867185600002D4D /* ZBJoinedDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BB261867185600002D4D /* ZBJoinedDetailTVC.m */; };
+		18F0BB2A1867186300002D4D /* ZBInvitedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BB291867186300002D4D /* ZBInvitedTVC.m */; };
+		18F0BB2D1867187500002D4D /* ZBInvitedDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F0BB2C1867187500002D4D /* ZBInvitedDetailTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +52,28 @@
 		18F0BAE418670B7400002D4D /* ZBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBAppDelegate.h; sourceTree = "<group>"; };
 		18F0BAE518670B7400002D4D /* ZBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBAppDelegate.m; sourceTree = "<group>"; };
 		18F0BAE818670B7400002D4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		18F0BAEA18670B7400002D4D /* ZBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBViewController.h; sourceTree = "<group>"; };
-		18F0BAEB18670B7400002D4D /* ZBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBViewController.m; sourceTree = "<group>"; };
 		18F0BAED18670B7400002D4D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18F0BAF318670B7400002D4D /* ZobaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZobaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F0BAF418670B7400002D4D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		18F0BAFC18670B7400002D4D /* ZobaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZobaTests-Info.plist"; sourceTree = "<group>"; };
 		18F0BAFE18670B7400002D4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18F0BB0018670B7400002D4D /* ZobaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZobaTests.m; sourceTree = "<group>"; };
+		18F0BB0A186716D100002D4D /* ZBSignInVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBSignInVC.h; sourceTree = "<group>"; };
+		18F0BB0B186716D100002D4D /* ZBSignInVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBSignInVC.m; sourceTree = "<group>"; };
+		18F0BB0D186716EF00002D4D /* ZBSignUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBSignUpVC.h; sourceTree = "<group>"; };
+		18F0BB0E186716EF00002D4D /* ZBSignUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBSignUpVC.m; sourceTree = "<group>"; };
+		18F0BB101867170A00002D4D /* ZBCreateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBCreateVC.h; sourceTree = "<group>"; };
+		18F0BB111867170A00002D4D /* ZBCreateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBCreateVC.m; sourceTree = "<group>"; };
+		18F0BB1F1867175B00002D4D /* ZBSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBSettingVC.h; sourceTree = "<group>"; };
+		18F0BB201867175B00002D4D /* ZBSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBSettingVC.m; sourceTree = "<group>"; };
+		18F0BB221867184500002D4D /* ZBJoinedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBJoinedTVC.h; sourceTree = "<group>"; };
+		18F0BB231867184500002D4D /* ZBJoinedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBJoinedTVC.m; sourceTree = "<group>"; };
+		18F0BB251867185600002D4D /* ZBJoinedDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBJoinedDetailTVC.h; sourceTree = "<group>"; };
+		18F0BB261867185600002D4D /* ZBJoinedDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBJoinedDetailTVC.m; sourceTree = "<group>"; };
+		18F0BB281867186300002D4D /* ZBInvitedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBInvitedTVC.h; sourceTree = "<group>"; };
+		18F0BB291867186300002D4D /* ZBInvitedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBInvitedTVC.m; sourceTree = "<group>"; };
+		18F0BB2B1867187500002D4D /* ZBInvitedDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBInvitedDetailTVC.h; sourceTree = "<group>"; };
+		18F0BB2C1867187500002D4D /* ZBInvitedDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBInvitedDetailTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +136,24 @@
 				18F0BAE418670B7400002D4D /* ZBAppDelegate.h */,
 				18F0BAE518670B7400002D4D /* ZBAppDelegate.m */,
 				18F0BAE718670B7400002D4D /* Main.storyboard */,
-				18F0BAEA18670B7400002D4D /* ZBViewController.h */,
-				18F0BAEB18670B7400002D4D /* ZBViewController.m */,
 				18F0BAED18670B7400002D4D /* Images.xcassets */,
 				18F0BADC18670B7400002D4D /* Supporting Files */,
+				18F0BB0A186716D100002D4D /* ZBSignInVC.h */,
+				18F0BB0B186716D100002D4D /* ZBSignInVC.m */,
+				18F0BB0D186716EF00002D4D /* ZBSignUpVC.h */,
+				18F0BB0E186716EF00002D4D /* ZBSignUpVC.m */,
+				18F0BB101867170A00002D4D /* ZBCreateVC.h */,
+				18F0BB111867170A00002D4D /* ZBCreateVC.m */,
+				18F0BB1F1867175B00002D4D /* ZBSettingVC.h */,
+				18F0BB201867175B00002D4D /* ZBSettingVC.m */,
+				18F0BB221867184500002D4D /* ZBJoinedTVC.h */,
+				18F0BB231867184500002D4D /* ZBJoinedTVC.m */,
+				18F0BB251867185600002D4D /* ZBJoinedDetailTVC.h */,
+				18F0BB261867185600002D4D /* ZBJoinedDetailTVC.m */,
+				18F0BB281867186300002D4D /* ZBInvitedTVC.h */,
+				18F0BB291867186300002D4D /* ZBInvitedTVC.m */,
+				18F0BB2B1867187500002D4D /* ZBInvitedDetailTVC.h */,
+				18F0BB2C1867187500002D4D /* ZBInvitedDetailTVC.m */,
 			);
 			path = Zoba;
 			sourceTree = "<group>";
@@ -250,9 +285,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18F0BAEC18670B7400002D4D /* ZBViewController.m in Sources */,
+				18F0BB211867175B00002D4D /* ZBSettingVC.m in Sources */,
+				18F0BB241867184500002D4D /* ZBJoinedTVC.m in Sources */,
+				18F0BB2A1867186300002D4D /* ZBInvitedTVC.m in Sources */,
 				18F0BAE618670B7400002D4D /* ZBAppDelegate.m in Sources */,
+				18F0BB2D1867187500002D4D /* ZBInvitedDetailTVC.m in Sources */,
+				18F0BB271867185600002D4D /* ZBJoinedDetailTVC.m in Sources */,
+				18F0BB121867170A00002D4D /* ZBCreateVC.m in Sources */,
 				18F0BAE218670B7400002D4D /* main.m in Sources */,
+				18F0BB0F186716EF00002D4D /* ZBSignUpVC.m in Sources */,
+				18F0BB0C186716D100002D4D /* ZBSignInVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
