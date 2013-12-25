@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZBSignUpVC : UIViewController
+@interface ZBSignUpVC : UIViewController <UITextFieldDelegate>
+
+@property (strong, nonatomic) IBOutlet UITextField *accountTF;
+@property (strong, nonatomic) IBOutlet UITextField *passwordTF;
+@property (strong, nonatomic) IBOutlet UITextField *nicknameTF;
+
+- (IBAction)enterClicked:(id)sender;
 
 @end

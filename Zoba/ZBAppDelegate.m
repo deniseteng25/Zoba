@@ -7,12 +7,16 @@
 //
 
 #import "ZBAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation ZBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"8WYXyi8QcshmhID6pbjRH9iJdD7cBjCsltrxMBiR"
+                  clientKey:@"cflqbiLuYmL2OqCqGPe8lWAzwrvdgd7qBxVlUdeE"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 							

@@ -7,6 +7,7 @@
 //
 
 #import "ZBSignUpVC.h"
+#import <Parse/Parse.h>
 
 @interface ZBSignUpVC ()
 
@@ -27,6 +28,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    _accountTF.delegate = self;
+    _passwordTF.delegate = self;
+    _nicknameTF.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +40,48 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)enterClicked:(id)sender
+{
+    NSString *errMsg = nil;
+    if ([_accountTF.text isEqualToString:@""])
+        errMsg = @"Please Fill Your Account";
+    else if ([_passwordTF.text isEqualToString:@""])
+        errMsg = @"Please Fill Your Password";
+    else if([_nicknameTF.text isEqualToString:@""])
+        errMsg = @"Please Fill Your Nickname";
+    
+    if (!errMsg) {
+        PFUser *user = [PFUser user];
+        user.username = _accountTF.text;
+        user.password = _passwordTF.text;
+        
+        // other fields can be set just like with PFObject
+        user[@"nickname"] = _nicknameTF.text;
+        
+        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                // Hooray! Let them use the app now.
+                id nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"MainView"];
+                [self presentViewController:nextView animated:YES completion:nil];
+            } else {
+                NSString *errorString = [error userInfo][@"error"];
+                // Show the errorString somewhere and let the user try again.
+                NSLog(@"%@", errorString);
+            }
+        }];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
+                                                       message:errMsg
+                                                      delegate:self
+                                             cancelButtonTitle:@"ok"
+                                             otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 @end
