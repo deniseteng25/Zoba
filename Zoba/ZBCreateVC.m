@@ -26,13 +26,39 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    self.titleField.delegate = self;
+    self.timeField.delegate = self;
+    self.amountField.delegate = self;
+    self.locateField.delegate = self;
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)addPeople:(id)sender {
+}
+
+- (IBAction)confirm:(id)sender {
+    
+    ZBCreateDetailVC *view = [self.storyboard instantiateViewControllerWithIdentifier: @"activityDetail"];
+    
+    view.Title = self.titleField.text;
+    view.Time = self.timeField.text;
+    view.Amount = self.amountField.text;
+    view.Locate = self.locateField.text;
+    
+    [self.navigationController pushViewController: view animated:YES];
+
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

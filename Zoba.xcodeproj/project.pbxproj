@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AA852F5186B184B00A737FD /* ZBCreateDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA852F4186B184B00A737FD /* ZBCreateDetailVC.m */; };
 		18F0BAD618670B7400002D4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F0BAD518670B7400002D4D /* Foundation.framework */; };
 		18F0BAD818670B7400002D4D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F0BAD718670B7400002D4D /* CoreGraphics.framework */; };
 		18F0BADA18670B7400002D4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F0BAD918670B7400002D4D /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AA852F3186B184B00A737FD /* ZBCreateDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBCreateDetailVC.h; sourceTree = "<group>"; };
+		0AA852F4186B184B00A737FD /* ZBCreateDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBCreateDetailVC.m; sourceTree = "<group>"; };
 		18F0BAD218670B7400002D4D /* Zoba.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zoba.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F0BAD518670B7400002D4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18F0BAD718670B7400002D4D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -144,6 +147,8 @@
 				18F0BB0E186716EF00002D4D /* ZBSignUpVC.m */,
 				18F0BB101867170A00002D4D /* ZBCreateVC.h */,
 				18F0BB111867170A00002D4D /* ZBCreateVC.m */,
+				0AA852F3186B184B00A737FD /* ZBCreateDetailVC.h */,
+				0AA852F4186B184B00A737FD /* ZBCreateDetailVC.m */,
 				18F0BB1F1867175B00002D4D /* ZBSettingVC.h */,
 				18F0BB201867175B00002D4D /* ZBSettingVC.m */,
 				18F0BB221867184500002D4D /* ZBJoinedTVC.h */,
@@ -291,6 +296,7 @@
 				18F0BAE618670B7400002D4D /* ZBAppDelegate.m in Sources */,
 				18F0BB2D1867187500002D4D /* ZBInvitedDetailTVC.m in Sources */,
 				18F0BB271867185600002D4D /* ZBJoinedDetailTVC.m in Sources */,
+				0AA852F5186B184B00A737FD /* ZBCreateDetailVC.m in Sources */,
 				18F0BB121867170A00002D4D /* ZBCreateVC.m in Sources */,
 				18F0BAE218670B7400002D4D /* main.m in Sources */,
 				18F0BB0F186716EF00002D4D /* ZBSignUpVC.m in Sources */,
@@ -503,6 +509,7 @@
 				18F0BB0618670B7400002D4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18F0BB0718670B7400002D4D /* Build configuration list for PBXNativeTarget "ZobaTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +518,7 @@
 				18F0BB0918670B7400002D4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
