@@ -13,6 +13,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *accountTF;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTF;
 @property (strong, nonatomic) IBOutlet UITextField *nicknameTF;
+@property (strong, nonatomic) IBOutlet UITextField *emailTF;
 
 - (IBAction)enterClicked:(id)sender;
 

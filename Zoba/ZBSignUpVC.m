@@ -32,6 +32,7 @@
     _accountTF.delegate = self;
     _passwordTF.delegate = self;
     _nicknameTF.delegate = self;
+    _emailTF.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,41 +43,82 @@
 
 - (IBAction)enterClicked:(id)sender
 {
-    NSString *errMsg = nil;
-    if ([_accountTF.text isEqualToString:@""])
-        errMsg = @"Please Fill Your Account";
-    else if ([_passwordTF.text isEqualToString:@""])
-        errMsg = @"Please Fill Your Password";
-    else if([_nicknameTF.text isEqualToString:@""])
-        errMsg = @"Please Fill Your Nickname";
+//    NSString *errMsg = nil;
+//    if ([_accountTF.text isEqualToString:@""])
+//        errMsg = @"Please Fill Your Account";
+//    else if ([_passwordTF.text isEqualToString:@""])
+//        errMsg = @"Please Fill Your Password";
+//    else if([_nicknameTF.text isEqualToString:@""])
+//        errMsg = @"Please Fill Your Nickname";
+//    else if([_emailTF.text isEqualToString:@""])
+//        errMsg = @"Please Fill Your Email";
     
-    if (!errMsg) {
-        PFUser *user = [PFUser user];
-        user.username = _accountTF.text;
-        user.password = _passwordTF.text;
-        
-        // other fields can be set just like with PFObject
-        user[@"nickname"] = _nicknameTF.text;
-        
-        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (!error) {
-                // Hooray! Let them use the app now.
-                id nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"MainView"];
-                [self presentViewController:nextView animated:YES completion:nil];
-            } else {
-                NSString *errorString = [error userInfo][@"error"];
-                // Show the errorString somewhere and let the user try again.
-                NSLog(@"%@", errorString);
-            }
-        }];
-    } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
-                                                       message:errMsg
-                                                      delegate:self
-                                             cancelButtonTitle:@"ok"
-                                             otherButtonTitles:nil];
-        [alert show];
-    }
+    PFUser *user = [PFUser user];
+    user.username = _accountTF.text;
+    user.password = _passwordTF.text;
+    user.email = _emailTF.text;
+    
+    // other fields can be set just like with PFObject
+    user[@"nickname"] = _nicknameTF.text;
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            NSString *errorString = [error userInfo][@"error"];
+            // Show the errorString somewhere and let the user try again.
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
+                                                            message:errorString
+                                                           delegate:self
+                                                  cancelButtonTitle:@"ok"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        } else if ([_nicknameTF.text isEqualToString:@""]) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
+                                                            message:@"nickname can't be empty"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"ok"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        } else {
+            // Hooray! Let them use the app now.
+            id nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"MainView"];
+            [self presentViewController:nextView animated:YES completion:nil];
+        }
+    }];
+//
+//    if (!errMsg) {
+//        PFUser *user = [PFUser user];
+//        user.username = _accountTF.text;
+//        user.password = _passwordTF.text;
+//        user.email = _emailTF.text;
+//        
+//        // other fields can be set just like with PFObject
+//        user[@"nickname"] = _nicknameTF.text;
+//        
+//        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//            if (!error) {
+//                // Hooray! Let them use the app now.
+//                id nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"MainView"];
+//                [self presentViewController:nextView animated:YES completion:nil];
+//            } else {
+//                NSString *errorString = [error userInfo][@"error"];
+//                // Show the errorString somewhere and let the user try again.
+//                NSLog(@"%@", errorString);
+//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
+//                                                                message:errorString
+//                                                               delegate:self
+//                                                      cancelButtonTitle:@"ok"
+//                                                      otherButtonTitles:nil];
+//                [alert show];
+//            }
+//        }];
+//    } else {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
+//                                                       message:errMsg
+//                                                      delegate:self
+//                                             cancelButtonTitle:@"ok"
+//                                             otherButtonTitles:nil];
+//        [alert show];
+//    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

@@ -57,6 +57,40 @@
     
 }
 
+- (IBAction)forgetPWClicked:(id)sender
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Forget password?"
+                                                    message:@"\nenter your email to reset password"
+                                                   delegate:self
+                                          cancelButtonTitle:@"cancel"
+                                          otherButtonTitles:@"reset", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert textFieldAtIndex:0].keyboardType = UIKeyboardTypeEmailAddress;
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"reset"])
+        [PFUser requestPasswordResetForEmailInBackground:[alertView textFieldAtIndex:0].text block:^(BOOL succeeded, NSError *error) {
+            if (!succeeded) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
+                                                                message:@"wrong email"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"ok"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset password"
+                                                                message:@"please check your email"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"ok"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+        }];
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
