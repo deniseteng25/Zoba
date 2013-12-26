@@ -38,6 +38,7 @@
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
                                             // Do stuff after successful login.
+                                            [[NSUserDefaults standardUserDefaults] setObject:user.objectId forKey:@"userId"];
                                             id nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"MainView"];
                                             [self presentViewController:nextView animated:YES completion:nil];
                                         } else {

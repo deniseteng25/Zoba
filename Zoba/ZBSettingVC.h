@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZBSettingVC : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
+@interface ZBSettingVC : UIViewController <UITextFieldDelegate, UIAlertViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *accountTF;
-@property (strong, nonatomic) IBOutlet UITextField *orinPWTF;
-@property (strong, nonatomic) IBOutlet UITextField *otherPWTF;
 @property (strong, nonatomic) IBOutlet UITextField *nicknameTF;
+@property (strong, nonatomic) IBOutlet UITextField *emailTF;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 - (IBAction)picClicked:(id)sender;
 - (IBAction)resetPWClicked:(id)sender;
 - (IBAction)saveClicked:(id)sender;
+- (IBAction)logoutClicked:(id)sender;
 
 @end

@@ -17,6 +17,17 @@
     [Parse setApplicationId:@"8WYXyi8QcshmhID6pbjRH9iJdD7cBjCsltrxMBiR"
                   clientKey:@"cflqbiLuYmL2OqCqGPe8lWAzwrvdgd7qBxVlUdeE"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    id initViewController;
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userId"])
+        initViewController = [storyboard instantiateViewControllerWithIdentifier: @"MainView"];
+    else
+        initViewController = [storyboard instantiateViewControllerWithIdentifier: @"InitView"];
+    
+    _window.rootViewController = initViewController;
+    
     return YES;
 }
 							
