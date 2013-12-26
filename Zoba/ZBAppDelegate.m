@@ -21,7 +21,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     id initViewController;
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userId"])
+    if ([PFUser currentUser])
         initViewController = [storyboard instantiateViewControllerWithIdentifier: @"MainView"];
     else
         initViewController = [storyboard instantiateViewControllerWithIdentifier: @"InitView"];

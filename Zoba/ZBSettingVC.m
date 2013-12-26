@@ -58,22 +58,40 @@
 
 - (IBAction)picClicked:(id)sender
 {
-    UIActionSheet *targetSheet = [[UIActionSheet alloc] initWithTitle:@"Select a photo"
+    UIActionSheet *targetSheet = [[UIActionSheet alloc] initWithTitle:@"Change Profile Picture"
                                                              delegate:self
                                                     cancelButtonTitle:@"Cancel"
                                                destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"Library", @"Camera", nil];
+                                                    otherButtonTitles:@"Remove Current Photo", @"Library", @"Camera", nil];
     [targetSheet showInView:self.view];
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if(buttonIndex == 0)
-        [self selectFromLibrary];
-    else if(buttonIndex == 1){
-        [self onCamera];
+- (void)willPresentActionSheet:(UIActionSheet *)actionSheet
+{
+    for (UIView *view in actionSheet.subviews) {
+        if ([view isKindOfClass:[UIButton class]]) {
+            [(UIButton *)view setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            return;
+        }
     }
-    else
-        return;
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            _imageView.image = nil;
+            [currentUser removeObjectForKey:@"pic"];
+            [currentUser save];
+            break;
+        case 1:
+            [self selectFromLibrary];
+            break;
+        case 2:
+            [self onCamera];
+            break;
+        default:
+            break;
+    }
 }
 
 -(void)onCamera{
@@ -93,14 +111,14 @@
 
 - (void)selectFromLibrary{
     //宣告一個UIImagePickerController並設定代理
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.allowsEditing = YES;
-    picker.delegate = self;
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.allowsEditing = YES;
+    imagePicker.delegate = self;
     //設定圖片來源為圖庫
-    picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     
     //以動畫方式顯示圖庫
-    [self presentViewController:picker animated:YES completion:NULL];
+    [self presentViewController:imagePicker animated:YES completion:NULL];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
@@ -151,11 +169,7 @@
         [PFUser logOut];
         
         id nextView = [self.storyboard instantiateViewControllerWithIdentifier:@"InitView"];
-        [self presentViewController:nextView
-                           animated:YES
-                         completion:^{
-                             [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"userId"];
-                         }];
+        [self presentViewController:nextView animated:YES completion:nil];
     }
 }
 
